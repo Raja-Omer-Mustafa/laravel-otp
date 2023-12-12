@@ -25,7 +25,7 @@ class OTPVarifyController extends Controller
 
             Auth::login($user);
 
-            return redirect('/dashboard')->with('success', 'OTP verified. You are now logged in.');
+            return redirect('/Dashboard')->with('success', 'OTP verified. You are now logged in.');
         }
 
         return redirect('OTP_varification')->withErrors(['otp' => 'Invalid OTP']);

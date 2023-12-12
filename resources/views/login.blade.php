@@ -8,6 +8,11 @@
 
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 border border-2 p-3 rounded ">
+            @if (session()->has('error'))
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            @endif
             <h1 class="text-center fs-4 fw-bold bg-primary p-2 mb-2">Login</h1>
             <form method="post" action="{{ route('userlogin') }}">
                 @csrf

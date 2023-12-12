@@ -835,15 +835,21 @@
 
 <body class="">
     <div class="container p-3">
+        @if (Auth::user())
+        
+        @else
         <div class="row">
             <div class="col d-flex justify-content-end">
                 <h1 class="mx-3 btn btn-primary"><a href="{{ route('login') }}">Login</a></h1>
                 <h1 class="btn btn-primary"><a href="{{ route('register') }}">Register</a></h1>
             </div>
         </div>
+
+        @endif
+
         @yield('content');
 
-        
+
 
     </div>
 

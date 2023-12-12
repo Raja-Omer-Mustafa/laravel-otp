@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -59,9 +60,13 @@ class LoginController extends Controller
             return redirect()->back()->withErrors(['email' => 'Invalid email']);
         }
 
-
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect('login')->withErrors(['error' => 'User Logout Successfully!']);
+
+    }
 
 
 }
